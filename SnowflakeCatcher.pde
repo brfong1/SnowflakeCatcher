@@ -1,18 +1,26 @@
 PImage umaru;
+PImage cola;
 Snowflake[] snow;
 void setup()
 {
+
+  frameRate(30);
   size(440, 440);
-  background(0);
+  snow = new Snowflake[100];
+  for (int i = 0; i < snow.length; i++)
+  {
+    snow[i] = new Snowflake();
+  }
+  cola = loadImage("cola.png");
   umaru = loadImage("http://biginjap.com/59850-thickbox_default/himouto-umaru-chan-roughly-life-size-cushion.jpg");
 }
 void draw()
 {
-  // image(umaru,-80,-80,600,600);
-  snow = new Snowflake[10];
+  
+  image(umaru, -80, -60, 600, 600);
+  image(cola, 100,100,100,150);
   for (int i = 0; i < snow.length; i++)
   {
-    snow[i] = new Snowflake();  
     snow[i].erase();
     snow[i].lookDown();
     snow[i].move();    
@@ -22,6 +30,7 @@ void draw()
 }
 void mouseDragged()
 {
+ 
 }
 
 
@@ -34,10 +43,13 @@ class Snowflake
   boolean isMoving;
   Snowflake()
   {
+    x = (int)(Math.random()*380) + 10;
+    y = (int)(Math.random()*380) + 10;
   }
   void show()
   {
-    ellipse(x, y, 5, 5);
+    fill(255);
+    ellipse(x, y, 10, 10);
   }
   void lookDown()
   {
@@ -48,8 +60,8 @@ class Snowflake
   }
   void erase()
   {
-    fill(0);
-    ellipse(x, y, 7, 7);
+    fill(255);
+    ellipse(x, y, 10, 10);
   }
   void move()
   {
