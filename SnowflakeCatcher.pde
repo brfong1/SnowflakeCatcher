@@ -13,12 +13,13 @@ void setup()
   }
   cola = loadImage("cola.png");
   umaru = loadImage("http://biginjap.com/59850-thickbox_default/himouto-umaru-chan-roughly-life-size-cushion.jpg");
+  // image(umaru, -80, -60, 600, 600);
+  background(0);
 }
 void draw()
 {
   
-  image(umaru, -80, -60, 600, 600);
-  image(cola, 100,100,100,150);
+  // image(cola, 100,100,100,150);
   for (int i = 0; i < snow.length; i++)
   {
     snow[i].erase();
@@ -30,7 +31,9 @@ void draw()
 }
 void mouseDragged()
 {
- 
+  // noStroke();
+  fill(0);
+  ellipse(mouseX, mouseY, 10,10);
 }
 
 
@@ -49,6 +52,7 @@ class Snowflake
   void show()
   {
     fill(255);
+    noStroke();
     ellipse(x, y, 10, 10);
   }
   void lookDown()
