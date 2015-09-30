@@ -1,5 +1,6 @@
 //PImage umaru;
 //PImage cola;
+
 int f = 30;
 int ellipseColor = 127;
 Snowflake[] snow;
