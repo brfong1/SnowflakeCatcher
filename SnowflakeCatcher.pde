@@ -87,7 +87,7 @@ class Snowflake
   void move()
   {
     if (isMoving == true)
-      y += 1;    
+      y += 4;    
   }
   void wrap()
   {
